@@ -1,0 +1,215 @@
+
+package assignment03;
+
+import javafx.scene.shape.Rectangle;
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import javafx.scene.paint.Color; 
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Polygon;
+
+
+
+
+
+public class Assignment03 extends Application{
+
+   
+    public static void main(String[] args) {
+       launch(args);
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        
+        int size = 11;
+        int windowSize = 4;
+        Rectangle[] stairs = new Rectangle[size];
+        Rectangle [] windows = new Rectangle[windowSize];
+        
+       
+       stage.setTitle("A House");  // add title to window at top
+        
+       Rectangle rct = new Rectangle(0,0, 1000, 435);//Top half background of picture(blue part)
+       rct.setFill(Color.PALETURQUOISE ); 
+       
+       Rectangle rct2 = new Rectangle(0,435,1000,480);//lower background (green part)
+       rct2.setFill(Color.LAWNGREEN); 
+       
+       Rectangle redHouse = new Rectangle(170,200,700,600); //red part of house
+       redHouse.setFill(Color.RED); 
+       redHouse.setStroke(Color.BLACK);
+       
+       Rectangle ceiling = new Rectangle(170,190,700,50); // white roof under triangle
+       ceiling.setFill(Color.WHITE);
+       ceiling.setStroke(Color.BLACK);
+       
+        Polygon triCeiling = new Polygon();
+        triCeiling.getPoints().addAll(new Double[]{
+            120.0, 190.0,
+            920.0, 190.0,
+            510.0, 0.0 });
+        triCeiling.setFill(Color.WHITE);
+        triCeiling.setStroke(Color.BLACK);
+       
+       
+       Rectangle leftPillar = new Rectangle(190,240,60,400); // Far left pillar
+       leftPillar.setFill(Color.WHITE);
+       leftPillar.setStroke(Color.BLACK);
+       
+       Rectangle leftMidPillar = new Rectangle(380,240, 60,400); // left Mid Pillar
+       leftMidPillar.setFill(Color.WHITE);
+       leftMidPillar.setStroke(Color.BLACK);
+       
+       Rectangle rightMidPillar = new Rectangle(575, 240, 60, 400); //pillar second to the right
+       rightMidPillar.setFill(Color.WHITE);
+       rightMidPillar.setStroke(Color.BLACK);
+       
+       Rectangle rightPillar = new Rectangle(790, 240, 60, 400); //right end pillar
+       rightPillar.setFill(Color.WHITE);
+       rightPillar.setStroke(Color.BLACK);
+       
+       Rectangle leftPillarBase = new Rectangle(180,641,80, 20); // foundation of far left pillar
+       leftPillarBase.setFill(Color.WHITE);
+       leftPillarBase.setStroke(Color.BLACK);
+       
+       Rectangle leftMidPillBase = new Rectangle(370, 641, 80, 20); //left middle pillar base
+       leftMidPillBase.setFill(Color.WHITE);
+       leftMidPillBase.setStroke(Color.BLACK);
+       
+       Rectangle rightMidPillBase = new Rectangle(565, 641, 80, 20); // right mid pillar base
+       rightMidPillBase.setFill(Color.WHITE);
+       rightMidPillBase.setStroke(Color.BLACK);
+       
+       Rectangle rightPillBase = new Rectangle(780, 641, 80, 20); // right pillar base
+       rightPillBase.setFill(Color.WHITE);
+       rightPillBase.setStroke(Color.BLACK);
+       
+       Rectangle bottomGreyPillar1 = new Rectangle(170, 662, 90, 10); // left bottom grey pillar
+       bottomGreyPillar1.setFill(Color.SILVER);
+       bottomGreyPillar1.setStroke(Color.BLACK);
+       
+       Rectangle bottomGreyPillar2 = new Rectangle(780, 662, 90, 10); // right bottom grey pillar
+       bottomGreyPillar2.setFill(Color.SILVER);
+       bottomGreyPillar2.setStroke(Color.BLACK);
+       
+       Circle circle1 =  new Circle(190,260, 20); //circle first pillar left
+       circle1.setFill(Color.WHITE);
+       circle1.setStroke(Color.BLACK);
+       
+       Circle circle2 =  new Circle(250,260, 20); // circle first pillar right
+       circle2.setFill(Color.WHITE);
+       circle2.setStroke(Color.BLACK);
+       
+       Circle circle3 =  new Circle(380, 260, 20); //left circle of second pillar
+       circle3.setFill(Color.WHITE);
+       circle3.setStroke(Color.BLACK);
+       
+       Circle circle4 =  new Circle(440, 260, 20); //right circle of second pillar 
+       circle4.setFill(Color.WHITE);
+       circle4.setStroke(Color.BLACK);
+       
+       Circle circle5 =  new Circle(575, 260, 20); //left circle of third pillar 
+       circle5.setFill(Color.WHITE);
+       circle5.setStroke(Color.BLACK);
+       
+        Circle circle6 =  new Circle(635, 260, 20); //right circle of third pillar 
+       circle6.setFill(Color.WHITE);
+       circle6.setStroke(Color.BLACK);
+       
+       Circle circle7 =  new Circle(790, 260, 20); //left circle of 4th pillar 
+       circle7.setFill(Color.WHITE);
+       circle7.setStroke(Color.BLACK);
+       
+       Circle circle8 =  new Circle(850, 260, 20); //right circle of 4th pillar 
+       circle8.setFill(Color.WHITE);
+       circle8.setStroke(Color.BLACK);
+       
+       Rectangle greyWindow = new Rectangle(459,287, 99,60); //grey window in between the middle pillars towards the top
+       greyWindow.setFill(Color.SILVER);
+       greyWindow.setStroke(Color.BLACK);
+       
+       Rectangle leftDoor = new Rectangle(265,470,100,195); // left side door
+       leftDoor.setFill(Color.WHITE);
+       leftDoor.setStroke(Color.BLACK);
+       
+       Rectangle rightDoor = new Rectangle(665,470,100,195); // right side door
+       rightDoor.setFill(Color.WHITE);
+       rightDoor.setStroke(Color.BLACK);
+       
+       Rectangle middleDoor = new Rectangle(460,430,100,240); // middle door
+       middleDoor.setFill(Color.WHITE);
+       middleDoor.setStroke(Color.BLACK);
+        
+        
+        
+        
+        Group gp1 = new Group(rct,rct2,redHouse, ceiling, triCeiling,leftPillar, leftMidPillar, rightMidPillar,rightPillar
+        ,leftPillarBase, rightMidPillBase,leftMidPillBase,rightPillBase, bottomGreyPillar1, bottomGreyPillar2,circle1,circle2,
+        circle3,circle4,circle5,circle6,circle7,circle8,greyWindow,leftDoor,rightDoor,middleDoor);
+        
+        for(int i = 0; i<size; i++){
+            stairs[i] = new Rectangle(260-(i * 15),662 + (i * 15),520 + (i * 30),15); //stairs Loop
+            
+            gp1.getChildren().add(stairs[i]);
+            stairs[i].setFill(Color.SILVER);
+            stairs[i].setStroke(Color.BLACK);
+        }
+        
+        for(int i = 0; i < windowSize; i++){      //left windows of door one
+            windows[i] = new Rectangle(282 , 500 + (i * 40), 20,33);
+            gp1.getChildren().add(windows[i]);
+        }
+        
+        for(int i = 0; i < windowSize; i++){         //right windows of door two
+            windows[i] = new Rectangle(330 , 500 + (i * 40), 20,33);
+            gp1.getChildren().add(windows[i]);
+        }
+        
+        for(int i = 0; i < windowSize; i++){          //left windows of middle door
+            windows[i] = new Rectangle(475 , 500 + (i * 40), 20,33);
+            gp1.getChildren().add(windows[i]);
+        }
+        
+        for(int i = 0; i < windowSize; i++){         //right windows of middle door
+            windows[i] = new Rectangle(523 , 500 + (i * 40), 20,33);
+            gp1.getChildren().add(windows[i]);
+        }
+        
+        for(int i = 0; i < windowSize; i++){         //left windows of left door
+            windows[i] = new Rectangle(680 , 500 + (i * 40), 20,33);
+            gp1.getChildren().add(windows[i]);
+        }
+        
+        for(int i = 0; i < windowSize; i++){         //right windows of left door
+            windows[i] = new Rectangle(728 , 500 + (i * 40), 20,33);
+            gp1.getChildren().add(windows[i]);
+        }
+        
+        for(int i = 0; i < 2; i++){         //small windows, left door
+            windows[i] = new Rectangle(282 + (i * 48) , 475 , 20,18);
+            gp1.getChildren().add(windows[i]);
+        }
+        
+        for(int i = 0; i < 2; i++){         //small windows, middle door
+            windows[i] = new Rectangle(475 + (i * 48) , 475 , 20,18);
+            gp1.getChildren().add(windows[i]);
+        }
+        
+        for(int i = 0; i < 2; i++){         //small windows, right door
+            windows[i] = new Rectangle(680 + (i * 48) , 475 , 20,18);
+            gp1.getChildren().add(windows[i]);
+        }
+        
+        Scene sn = new Scene(gp1, 1000, 900); // scene object of scene class, windows size
+       
+        stage.setScene(sn);
+        
+        stage.show();
+    }
+    
+}
